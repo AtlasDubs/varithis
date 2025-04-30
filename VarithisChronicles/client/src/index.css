@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --primary: 35 57% 57%;  /* c8a45c */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 267 32% 43%;  /* 6a4c93 */
+    --secondary-foreground: 220 8.9% 46.1%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --ring: 35 57% 57%;
+    --radius: 0.5rem;
+    
+    /* Chart colors */
+    --chart-1: 35 57% 57%;
+    --chart-2: 267 32% 43%;
+    --chart-3: 0 47% 40%;
+    --chart-4: 212 66% 40%;
+    --chart-5: 142 47% 31%;
+    
+    /* Special accent colors */
+    --accent-red: 0 47% 40%;
+    --accent-blue: 212 66% 40%;
+    --accent-green: 142 47% 31%;
+    
+    /* Sidebar colors */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 35 57% 57%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 97%;
+    --sidebar-accent-foreground: 0 0% 45%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 214.3 31.8% 91.4%;
+    
+    /* Custom dark theme colors */
+    --dark: 226 20% 14%;
+    --dark-lighter: 222 16% 18%;
+    --dark-darker: 222 33% 6%;
+    
+    /* Custom light theme colors */
+    --light: 30 30% 96%;
+    --light-darker: 30 20% 92%;
+  }
+  
+  .dark {
+    --background: 226 20% 14%;
+    --foreground: 0 0% 98%;
+    --muted: 223 15% 25%;
+    --muted-foreground: 223 10% 72%;
+    --popover: 226 20% 14%;
+    --popover-foreground: 0 0% 98%;
+    --card: 226 20% 14%;
+    --card-foreground: 0 0% 98%;
+    --border: 223 15% 25%;
+    --input: 223 15% 25%;
+    --primary: 35 57% 57%;  /* c8a45c */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 267 32% 43%;  /* 6a4c93 */
+    --secondary-foreground: 0 0% 98%;
+    --accent: 223 15% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 35 57% 57%;
+    
+    /* Special accent colors */
+    --accent-red: 0 47% 50%;
+    --accent-blue: 212 66% 60%;
+    --accent-green: 142 47% 50%;
+    
+    /* Sidebar colors */
+    --sidebar-background: 222 16% 18%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 35 57% 57%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 222 16% 24%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 223 15% 25%;
+    --sidebar-ring: 35 57% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-lora antialiased bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom classes */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faction-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faction-card:hover {
+  transform: translateY(-5px);
+}
+
+.dialogue-choice {
+  transition: background-color 0.2s ease;
+}
+
+/* Scroll styling */
+.styled-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(200, 164, 92, 0.5);
+  border-radius: 4px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 164, 92, 0.8);
+}
+
+/* Progress bar animation */
+@keyframes progressAnimation {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.progress-animate {
+  animation: progressAnimation 1.5s ease-out forwards;
+}
+
+/* Typography */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-lora {
+  font-family: 'Lora', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
